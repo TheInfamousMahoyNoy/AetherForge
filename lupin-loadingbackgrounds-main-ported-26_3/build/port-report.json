@@ -1,0 +1,81 @@
+{
+  "sourceMod": "D:\\Personal\\Downloads\\lupin-loadingbackgrounds-main",
+  "outputMod": "D:\\Personal\\Downloads\\lupin-loadingbackgrounds-main-ported-26_3",
+  "fromVersion": "26.1.2",
+  "toVersion": "26.3",
+  "startedAt": "2026-10-30 13:57:06",
+  "steps": [
+    {
+      "step": "build.gradle",
+      "success": true,
+      "message": "Build files patched",
+      "changes": [
+        "D:\\Personal\\Downloads\\lupin-loadingbackgrounds-main-ported-26_3\\build.gradle: updated sourceCompatibility 21 → 25",
+        "D:\\Personal\\Downloads\\lupin-loadingbackgrounds-main-ported-26_3\\build.gradle: updated targetCompatibility 21 → 25",
+        "D:\\Personal\\Downloads\\lupin-loadingbackgrounds-main-ported-26_3\\common\\build.gradle: changed modImplementation → implementation for fabric-loader",
+        "D:\\Personal\\Downloads\\lupin-loadingbackgrounds-main-ported-26_3\\fabric\\build.gradle: changed modImplementation → implementation for fabric-loader"
+      ]
+    },
+    {
+      "step": "gradle.properties",
+      "success": true,
+      "message": "gradle.properties updated",
+      "changes": [
+        "minecraft_version: 1.21 → 26.3",
+        "fabric_loader_version: 0.16.10 → 0.19.5"
+      ]
+    },
+    {
+      "step": "sources",
+      "success": true,
+      "message": "Source patched: 0 change(s) across 4 file(s)",
+      "changes": []
+    },
+    {
+      "step": "resources",
+      "success": true,
+      "message": "Resource/data files patched",
+      "changes": []
+    },
+    {
+      "step": "warnings",
+      "success": true,
+      "message": "Migration warnings: 4",
+      "changes": [
+        "mixins\\mixin\\MixinLevelLoadingScreen.java: MANUAL 26.2 REVIEW for `@At(` - 26.2 mixins: verify targets against the renamed/moved 26.2 methods before release; only exact known target strings are safe to automate. Source: https://github.com/neoforged/.github/blob/main/primers/26.2/index.md",
+        "mixins\\mixin\\MixinResourceTexture.java: MANUAL 26.2 REVIEW for `@At(` - 26.2 mixins: verify targets against the renamed/moved 26.2 methods before release; only exact known target strings are safe to automate. Source: https://github.com/neoforged/.github/blob/main/primers/26.2/index.md",
+        "mixins\\mixin\\MixinLevelLoadingScreen.java: MANUAL 26.3 REVIEW for `@At(` - 26.3 mixins: verify every target against 26.3 official sources; only exact known descriptors are safe to automate. Source: https://github.com/neoforged/.github/blob/main/primers/26.3/index.md",
+        "mixins\\mixin\\MixinResourceTexture.java: MANUAL 26.3 REVIEW for `@At(` - 26.3 mixins: verify every target against 26.3 official sources; only exact known descriptors are safe to automate. Source: https://github.com/neoforged/.github/blob/main/primers/26.3/index.md"
+      ]
+    },
+    {
+      "step": "metadata",
+      "success": true,
+      "message": "Mod metadata updated",
+      "changes": [
+        "fabric.mod.json minecraft: ${minecraft_version_semver} → ~26.3",
+        "fabric.mod.json fabricloader → \u003e\u003d0.19.5",
+        "mods.toml minecraft versionRange → [26.3,)",
+        "mods.toml minecraft versionRange → [26.3,)"
+      ]
+    },
+    {
+      "step": "accesswidener",
+      "success": true,
+      "message": "Access widener patched",
+      "changes": [
+        "Renamed loadingbackgrounds.accesswidener → loadingbackgrounds.classtweaker; namespace named → official",
+        "build.gradle: updated access widener filename loadingbackgrounds.accesswidener → loadingbackgrounds.classtweaker"
+      ]
+    },
+    {
+      "step": "build",
+      "success": false,
+      "exitCode": -1,
+      "errors": "No gradlew found at D:\\Personal\\Downloads\\lupin-loadingbackgrounds-main-ported-26_3",
+      "logFile": ""
+    }
+  ],
+  "success": false,
+  "completedAt": "2026-10-30 13:57:07"
+}

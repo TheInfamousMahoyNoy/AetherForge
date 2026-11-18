@@ -23,10 +23,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build mod
+        working-directory: Aetherforged-Playable
         run: gradle build
 
       - name: Upload mod JAR
         uses: actions/upload-artifact@v4
         with:
           name: Aetherforged-Mod
-          path: build/libs/*.jar
+          path: Aetherforged-Playable/build/libs/*.jar

@@ -37,7 +37,7 @@ public final class ActionEngine {
         double amount = step.amount() == null ? 0.0 : step.amount();
         switch (step.type()) {
             case "builtin:bonus_damage" -> target.hurt(player.damageSources().playerAttack(player), (float)Math.max(0, amount));
-            case "builtin:ignite" -> target.igniteFor((int)Math.max(0, Math.min(1200, amount)));
+            case "builtin:ignite" -> target.setSecondsOnFire((int)Math.max(0, Math.min(1200, amount)) / 20);
             case "builtin:heal_wielder" -> player.heal((float)Math.max(0, amount));
             case "builtin:knockback" -> {
                 Vec3 direction = target.position().subtract(player.position()).normalize();

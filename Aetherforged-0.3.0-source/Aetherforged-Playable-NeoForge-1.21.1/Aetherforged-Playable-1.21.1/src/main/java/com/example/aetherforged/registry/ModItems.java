@@ -4,6 +4,7 @@ import com.example.aetherforged.Aetherforged;
 import net.minecraft.world.item.Item;
 import com.example.aetherforged.item.AetherbladeItem;
 import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.SwordItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "all": "aetherforged:block/infusion_core"
+  }
+}

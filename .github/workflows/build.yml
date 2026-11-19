@@ -26,8 +26,12 @@ jobs:
         working-directory: Aetherforged-0.3.0-source/Aetherforged-Playable-NeoForge-1.21.1/Aetherforged-Playable-1.21.1
         run: gradle build
 
+      - name: Show generated JAR files
+        run: find . -type f -path "*/build/libs/*.jar"
+
       - name: Upload mod JAR
         uses: actions/upload-artifact@v4
         with:
           name: Aetherforged-Mod
-          path: Aetherforged-Playable-NeoForge-1.21.1/Aetherforged-Playable-1.21.1/build/libs/*.jar
+          path: Aetherforged-0.3.0-source/Aetherforged-Playable-NeoForge-1.21.1/Aetherforged-Playable-1.21.1/build/libs/*.jar
+          if-no-files-found: error

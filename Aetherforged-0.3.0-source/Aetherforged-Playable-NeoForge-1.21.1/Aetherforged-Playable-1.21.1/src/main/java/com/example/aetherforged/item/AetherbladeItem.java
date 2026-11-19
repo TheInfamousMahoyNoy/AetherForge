@@ -6,7 +6,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.TooltipContext;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
@@ -16,25 +18,30 @@ public class AetherbladeItem extends SwordItem {
         super(tier, properties);
     }
 
-    @Override
-    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(stack, level, tooltip, flag);
-        List<String> programs = InfusionData.getPrograms(stack);
-        if (programs.isEmpty()) {
-            tooltip.add(Component.translatable("tooltip.aetherforged.no_infusions")
-                    .withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
-            return;
-        }
+@Override
+public void appendHoverText(
+        ItemStack stack,
+        TooltipContext context,
+        List<Component> tooltip,
+        TooltipFlag flag
+) {
+    super.appendHoverText(stack, context, tooltip, flag);
 
-        tooltip.add(Component.translatable("tooltip.aetherforged.infusions")
-                .withStyle(ChatFormatting.LIGHT_PURPLE));
-        for (String id : programs) {
-            String displayName = ActionRegistry.get(id)
-                    .map(program -> program.name())
-                    .orElseGet(() -> humanize(id));
-            tooltip.add(Component.literal(" • " + displayName).withStyle(ChatFormatting.AQUA));
+    List<String> programs = InfusionData.getPrograms(stack);
+
+    if (programs.isEmpty()) {
+        tooltip.add(Component.literal("No active infusions")
+                .withStyle(ChatFormatting.GRAY));
+    } else {
+        tooltip.add(Component.literal("Active Infusions:")
+                .withStyle(ChatFormatting.AQUA));
+
+        for (String program : programs) {
+            tooltip.add(Component.literal(" • " + program)
+                    .withStyle(ChatFormatting.LIGHT_PURPLE));
         }
     }
+}
 
     private static String humanize(String id) {
         int separator = id.indexOf(':');

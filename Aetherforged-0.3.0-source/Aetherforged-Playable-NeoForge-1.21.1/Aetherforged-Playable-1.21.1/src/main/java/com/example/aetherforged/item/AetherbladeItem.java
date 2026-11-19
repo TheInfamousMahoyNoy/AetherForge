@@ -1,5 +1,6 @@
 package com.example.aetherforged.item;
 
+import com.example.aetherforged.infusion.InfusionData;
 import com.example.aetherforged.action.ActionRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -9,7 +10,6 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.TooltipContext;
-import net.minecraft.world.level.Level;
 
 import java.util.List;
 
